@@ -4,13 +4,13 @@ from typing import Optional, Tuple, Union, List
 import torch
 from torch import nn
 
-# A fancy activation function
+# Необычная функция активации
 class Swish(nn.Module):
 
     def forward(self, x):
         return x * torch.sigmoid(x)
 
-# The time embedding 
+# Time Embedding 
 class TimeEmbedding(nn.Module):
 
     def __init__(self, n_channels: int):
