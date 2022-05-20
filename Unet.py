@@ -16,11 +16,11 @@ class TimeEmbedding(nn.Module):
     def __init__(self, n_channels: int):
         super().__init__()
         self.n_channels = n_channels
-        # First linear layer
+        # Первый линейный слой
         self.lin1 = nn.Linear(self.n_channels // 4, self.n_channels)
-        # Activation
+        # Активация
         self.act = Swish()
-        # Second linear layer
+        # Второй линейный слой
         self.lin2 = nn.Linear(self.n_channels, self.n_channels)
 
     def forward(self, t: torch.Tensor):
