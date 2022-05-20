@@ -56,10 +56,6 @@ class ResidualBlock(nn.Module):
         self.time_emb = nn.Linear(time_channels, out_channels)
 
     def forward(self, x: torch.Tensor, t: torch.Tensor):
-        """
-        * `x` has shape `[batch_size, in_channels, height, width]`
-        * `t` has shape `[batch_size, time_channels]`
-        """
         # Первый слой сверткиr
         h = self.conv1(self.act1(self.norm1(x)))
         # Добавление time embeddings
